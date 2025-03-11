@@ -15,7 +15,13 @@ public final class Constants {
   }
 
   public final class OIConstants{
-    public static final int kDriverControllerPort = 0; //port for xbox controller is *0*
+    //port for xbox controller is *0*
+    public static final int kDriverControllerPort = 0; 
+  }
+
+  public final class IntakeConstants{
+    public static final int kIntakeMotorPort = 0; //*yet to be decided*
+    public static final int kIntakeSpeed = 1; //sets the intake speed to 100%
   }
 
   }
