@@ -19,6 +19,15 @@ public final class Constants {
     public static final double kElevatorSpeedDown = -0.5; //Motor speed going down
     public static final int kElevatorUpButton = 1; //button that makes the elevator go up
     public static final int kElevatorDownButton = 2; //button that makes the elevator go down
+
+    public static final double kElevatorKp = 0.0;
+    public static final double kElevatorKi = 0.0;
+    public static final double kElevatorKd = 0.0;
+
+    public static final int kElevatorPIDUpButton = 3; //button that starts the PID to go up
+    public static final int kElevatorPIDDownButton = 4; //button that starts the PID to go down
+    public static final double kElevatorPIDsetpointgoto = 1.3; //Sets the PID motor to 1.3 meters
+    public static final double kElevatorPIDsetpointreturn = 0; //resets the PID motor back to 0 making the elevator go down
   }
   public static final class OIconstants{
     public static final int kControllerPort = 0; //makes the controller port 0 

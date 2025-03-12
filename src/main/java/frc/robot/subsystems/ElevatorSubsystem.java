@@ -16,13 +16,13 @@ public class ElevatorSubsystem extends SubsystemBase {
   private SparkMax elevatorMotor = new SparkMax(ElevatorConstants.kElevatorMotorPort, MotorType.kBrushless); // Creates a new SparkMax object for the elevator motor 
   private final double kEncoderTick2Meter = 1.0/4096.0 * 0.1 * Math.PI;
   
-  //gets the postition of the elevator motor
-  private double getElevatorHeight() {
-    return elevatorMotor.getEncoder().getPosition() * kEncoderTick2Meter;
+  //gets the motor position in meters
+  public double getEncoderMeters() {
+    return getEncoderPosition() * kEncoderTick2Meter;
   }
 
-  //gets the position of the encoder
-  private double getEncoderPosition() {
+  //gets the encoder position
+  private final double getEncoderPosition() {
     return elevatorMotor.getEncoder().getPosition();
   }
 
@@ -32,8 +32,7 @@ public class ElevatorSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    SmartDashboard.putNumber("Elevator Height", getElevatorHeight());
-    SmartDashboard.putNumber("Elevator Encoder Position", getEncoderPosition());
+    SmartDashboard.putNumber("Arm Encoder", getEncoderPosition());
   }
 
   public void setElevatorSpeed(double speed) {
