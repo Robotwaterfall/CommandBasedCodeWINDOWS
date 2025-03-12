@@ -32,4 +32,13 @@ public final class Constants {
   public static final class OIconstants{
     public static final int kControllerPort = 0; //makes the controller port 0 
   }
+
+public static final class DriveTrainConstants{
+  //Motor Ports
+  public static final int kLeftmotorport1 = 0;
+  public static final int kLeftmotorport2 = 0;
+  public static final int kRightmotorport1 = 0;
+  public static final int kRightmotorport2 = 0;
+}
+
 }
