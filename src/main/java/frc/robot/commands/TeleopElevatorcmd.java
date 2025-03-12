@@ -30,13 +30,13 @@ public class TeleopElevatorcmd extends Command {
  
   @Override
   public void execute() {
-    elevatorsubsystem.setElevatorSpeed(speed);
+    elevatorsubsystem.setSpeed(speed);
   }
 
   
   @Override
   public void end(boolean interrupted) {
-    elevatorsubsystem.setElevatorSpeed(0);
+    elevatorsubsystem.setSpeed(0);
     System.out.println("TeleopElevatorcmd ended");
   }
 
