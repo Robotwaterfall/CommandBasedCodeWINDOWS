@@ -4,38 +4,35 @@
 
 package frc.robot.subsystems;
 
-import com.revrobotics.spark.SparkMax;
-import com.revrobotics.spark.SparkLowLevel.MotorType;
-
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ElevatorConstants;
 
 public class ElevatorSubsystem extends SubsystemBase {
 
-  private SparkMax elevatorMotor = new SparkMax(ElevatorConstants.kElevatorMotorPort, MotorType.kBrushless); // Creates a new SparkMax object for the elevator motor 
+  private SparkMax PIDmotor = new SparkMax(ElevatorConstants.kElevatorMotorPort, MotorType.kBrushless);
   private final double kEncoderTick2Meter = 1.0/4096.0 * 0.1 * Math.PI;
-  
-  //gets the motor position in meters
+
   public double getEncoderMeters() {
     return getEncoderPosition() * kEncoderTick2Meter;
   }
-
-  //gets the encoder position
   private final double getEncoderPosition() {
-    return elevatorMotor.getEncoder().getPosition();
+    return PIDmotor.getEncoder().getPosition();
   }
 
-  
+  /** Creates a new ElevatorPIDSubsystem. */
+  public ElevatorSubsystem() {
 
-  public ElevatorSubsystem() {}
+  }
 
   @Override
   public void periodic() {
     SmartDashboard.putNumber("Arm Encoder", getEncoderPosition());
   }
 
-  public void setElevatorSpeed(double speed) {
-    elevatorMotor.set(speed);
+  public void setSpeed(double speed) {
+    PIDmotor.set(speed);
   }
 }

@@ -6,44 +6,43 @@ package frc.robot.commands;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.ElevatorConstants;
 import frc.robot.subsystems.ElevatorSubsystem;
 
 
 public class PIDElevatorcmd extends Command {
 
-  private ElevatorSubsystem elevatorsubsystem;
-  private PIDController pidcontroller;
+  private final ElevatorSubsystem elevatorSubsystem;
+  private final PIDController pidcontroller;
 
-  public PIDElevatorcmd(ElevatorSubsystem elevatorsubsystem, PIDController pidcontroller, double setpoint) {
-    this.elevatorsubsystem = elevatorsubsystem;
-    this.pidcontroller = new PIDController(ElevatorConstants.kElevatorKp, ElevatorConstants.kElevatorKi, ElevatorConstants.kElevatorKd);
+  public PIDElevatorcmd(ElevatorSubsystem elevatorSubsystem, double setpoint) {
+    this.elevatorSubsystem = elevatorSubsystem;
+    this.pidcontroller = new PIDController(3, 0, 0.8);
     pidcontroller.setSetpoint(setpoint);
-    addRequirements(elevatorsubsystem);
+    addRequirements(elevatorSubsystem);
+  
   }
-
 
   @Override
   public void initialize() {
     pidcontroller.reset();
   }
 
-  
+
   @Override
   public void execute() {
-    System.out.println("Elevator PID executed");
-    double speed = pidcontroller.calculate(elevatorsubsystem.getEncoderMeters());
-    elevatorsubsystem.setElevatorSpeed(speed);
+    System.out.println("ElevatorPIDcmd executed");
+    double speed = pidcontroller.calculate(elevatorSubsystem.getEncoderMeters());
+    elevatorSubsystem.setSpeed(speed);
   }
 
-  
+
   @Override
   public void end(boolean interrupted) {
-    System.out.println("Elevator PID ended");
-    elevatorsubsystem.setElevatorSpeed(0);
+    System.out.println("ElevatorPIDcmd ended");
+    elevatorSubsystem.setSpeed(0);
   }
 
- 
+
   @Override
   public boolean isFinished() {
     return false;

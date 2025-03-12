@@ -14,20 +14,20 @@ package frc.robot;
  */
 public final class Constants {
   public static final class ElevatorConstants {
-    public static final int kElevatorMotorPort = 0; //Motor port
-    public static final double kElevatorSpeedUp = 0.5; //Motor speed going up
-    public static final double kElevatorSpeedDown = -0.5; //Motor speed going down
-    public static final int kElevatorUpButton = 1; //button that makes the elevator go up
-    public static final int kElevatorDownButton = 2; //button that makes the elevator go down
+  // Elevator Motor Ports
+  public static final int kElevatorMotorPort = 13;
+  //Elevator Buttons
+  public static final int kElevatorUpButton = 1;
+  public static final int kElevatorDownButton = 2;
+  public static final int kElevatorPIDUpButton = 3;
+  public static final int kElevatorPIDDownButton = 4;
+  // Elevator speed (arcade drive)
+  public static final double kElevatorSpeedup = 0.5; // 0.5 is the speed
+  public static final double kElevatorSpeeddown = -0.5; // -0.5 is the speed
 
-    public static final double kElevatorKp = 0.0;
-    public static final double kElevatorKi = 0.0;
-    public static final double kElevatorKd = 0.0;
-
-    public static final int kElevatorPIDUpButton = 3; //button that starts the PID to go up
-    public static final int kElevatorPIDDownButton = 4; //button that starts the PID to go down
-    public static final double kElevatorPIDsetpointgoto = 1.3; //Sets the PID motor to 1.3 meters
-    public static final double kElevatorPIDsetpointreturn = 0; //resets the PID motor back to 0 making the elevator go down
+  // Elevator PID Constants 
+  public static final double kElevatorSetpointreturn = 0; // the setpoint for the elevator to return to (0 meters)
+  public static final double kElevatorSetpointgoto = 1.2; // the setpoint for the elevator to go to (1.2 meters)
   }
   public static final class OIconstants{
     public static final int kControllerPort = 0; //makes the controller port 0 
