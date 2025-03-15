@@ -13,12 +13,29 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public final static class OIconstants{
+
+        //sets the controller port
+        public final static int kControllerPort = 0;
+
+        //sets the button for the algaedismountmotor
+        public final static int kControllerButtonAlgaeDismountMotor = 1;
+        //speed of the motor
+        public final static double kAlgaeDismountMotorSpeed = 1;
+
+        
+    }
+
     public final static class driveconstants{
         //set's motor ports
         public final static int kLeftMasterMotor1port = 1;
         public final static int kLeftMasterMotor2port = 2;
         public final static int kRightMasterMotor1port = 3;
         public final static int kRightMasterMotor2port = 4;
+
+        //X and Y
+        public final static int kXControllerport = 0;
+        public final static int kYControllerport = 1;
     }
 
     public final static class AlgaeDismountConstants{

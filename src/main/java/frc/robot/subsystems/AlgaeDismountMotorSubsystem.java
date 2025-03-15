@@ -9,7 +9,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.AlgaeDismountConstants;
 
-public class AlgaeDismountMotor extends SubsystemBase {
+public class AlgaeDismountMotorSubsystem extends SubsystemBase {
   //Creates a new Motor
   private SparkMax AlgaeDismountMotor = new SparkMax(AlgaeDismountConstants.kAlgaeMotorPort, MotorType.kBrushless);
 

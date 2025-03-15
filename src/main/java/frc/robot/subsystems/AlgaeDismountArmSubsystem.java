@@ -9,12 +9,11 @@ import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkMaxConfig;
-
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.AlgaeDismountConstants;
 
-public class AlgaeDismountArm extends SubsystemBase {
+public class AlgaeDismountArmSubsystem extends SubsystemBase {
   //Creates a new Motor that moves the dismount arm up and down
   public SparkMax AlgaeDismountArm = new SparkMax(AlgaeDismountConstants.kAlgaeArmMotorport, MotorType.kBrushless);
   public SparkMaxConfig AlgaeDismountArmconfig = new SparkMaxConfig();
@@ -29,7 +28,7 @@ public class AlgaeDismountArm extends SubsystemBase {
 
   private double setpoint_Degress;
   
-  public AlgaeDismountArm() {
+  public AlgaeDismountArmSubsystem() {
     dismountarmController.enableContinuousInput(0,360);
 
     AlgaeDismountArmconfig.absoluteEncoder.positionConversionFactor(360);
