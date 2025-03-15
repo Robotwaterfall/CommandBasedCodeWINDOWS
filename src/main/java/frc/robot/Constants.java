@@ -21,4 +21,14 @@ public final class Constants {
         public final static int kRightMasterMotor2port = 4;
     }
 
+    public final static class AlgaeDismountConstants{
+        public final static int kAlgaeArmMotorport = 0; //*yet to be choosen */
+        
+        public final static int kAlgaeMotorPort = 5; //*yet to be choosen */
+
+        public final static double kAlgaePidControllerKp = 0;
+        public final static double kAlgaePidControllerKi = 0;
+        public final static double kAlgaePidControllerKd = 0;
+    }
+
 }
