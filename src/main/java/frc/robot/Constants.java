@@ -27,7 +27,7 @@ public final class Constants {
     }
 
     public final static class driveconstants{
-        //set's motor ports
+        //Motor Ports
         public final static int kLeftMasterMotor1port = 1;
         public final static int kLeftMasterMotor2port = 2;
         public final static int kRightMasterMotor1port = 3;
@@ -39,10 +39,11 @@ public final class Constants {
     }
 
     public final static class AlgaeDismountConstants{
-        public final static int kAlgaeArmMotorport = 0; //*yet to be choosen */
-        
-        public final static int kAlgaeMotorPort = 5; //*yet to be choosen */
+        //Motor Ports
+        public final static int kAlgaeArmMotorport = 0; //*yet to be choosen (ARMMOTOR)*/
+        public final static int kAlgaeMotorPort = 5; //*yet to be choosen (SPINMOTOR)*/
 
+        //Kp, Ki, and Kd
         public final static double kAlgaePidControllerKp = 0;
         public final static double kAlgaePidControllerKi = 0;
         public final static double kAlgaePidControllerKd = 0;
